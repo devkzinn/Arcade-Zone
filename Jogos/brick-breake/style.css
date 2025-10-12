@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #333; /* Fundo escuro */
+    font-family: sans-serif;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* O container que segura o canvas e o menu */
+.game-container {
+    position: relative; /* Essencial para posicionar o menu */
+    width: 480px; /* Largura do canvas */
+    height: 320px; /* Altura do canvas */
+}
+
+/* Estilo para a área do jogo */
+#gameCanvas {
+    background-color: #000; /* Fundo do jogo preto */
+    border: 3px solid #FFF;
+    display: block;
+}
+
+/* Estilo para o Menu de Início */
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo semi-transparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #FFF; /* Mantém a mesma borda do canvas */
+    z-index: 10; /* Garante que fique acima do canvas */
+    text-align: center;
+}
+
+.menu h2 {
+    color: #0095DD;
+    margin-bottom: 10px;
+}
+
+.menu button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #0095DD;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.menu button:hover {
+    background-color: #007bb5;
+}
+
+/* Classe para esconder o menu */
+.hidden {
+    display: none;
+}

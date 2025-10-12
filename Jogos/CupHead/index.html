@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Rush de Plataforma</title>
+    <style>
+        /*
+        ========================================
+        MUDANÇAS PARA TELA CHEIA E SEM ROLAGEM
+        ========================================
+        */
+        body {
+            /* 1. Remove margem padrão */
+            margin: 0; 
+            /* 2. Impede que o conteúdo 'extravase' e crie barras de rolagem */
+            overflow: hidden; 
+            background-color: black; 
+            /* 3. Garante que ele ocupe 100% da visualização */
+            height: 100vh;
+            width: 100vw;
+            /* Remove estilos de centralização que não são mais necessários com o canvas 100% */
+            display: block; 
+        }
+        #gameCanvas {
+            /* 4. O canvas ocupa 100% da área visível do body */
+            width: 100vw;
+            height: 100vh;
+            /* Remove a borda e a sombra, pois elas ficariam nas extremidades da tela */
+            border: none;
+            box-shadow: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script src="game.js"></script>
+</body>
+</html>
