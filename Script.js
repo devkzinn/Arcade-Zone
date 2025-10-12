@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Lista de Jogos — tem que colocar os jogos
 	const games = [
 		// preencha o caminho do executável conforme seu sistema. Exemplo abaixo assume D:/Privado/HTML/Launcher/Jogos/Level Devil/LevelDevil.exe
-		{id:1,title:'Level Devil Kz',img:'Jogos/Level Devil/imagens/Capa Levil Devil Kz.png',desc:'plataforma 2D', exePath: 'Jogos/Level Devil/index.html'},
-		{id:2,title:'Divinity',img:'https://picsum.photos/seed/divinity/400/600',desc:'RPG tático.'},
-		{id:3,title:'Double Dragon Neon',img:'https://picsum.photos/seed/dd/400/600',desc:'Beat em up retrô.'},
-		{id:4,title:'Dragon Ball Z',img:'https://picsum.photos/seed/dbz/400/600',desc:'Lutas épicas.'},
-		{id:5,title:'Duke Nukem',img:'https://picsum.photos/seed/duke/400/600',desc:'Ação e humor.'},
-		{id:6,title:'Dirt Rally',img:'https://picsum.photos/seed/dirt/400/600',desc:'Corridas off-road.'},
-		{id:7,title:'Dishonored',img:'https://picsum.photos/seed/dish/400/600',desc:'Stealth e ação.'},
-		{id:8,title:'Dust',img:'https://picsum.photos/seed/dust/400/600',desc:'Aventura indie.'}
+		{id:1,title:'Jogo 2',img:'https://picsum.photos/seed/divinity/400/600',desc:'RPG tático.'},
+		{id:2,title:'Level Devil Kz',img:'Jogos/Level Devil/imagens/Capa Levil Devil Kz.png',desc:'plataforma 2D', exePath: 'Jogos/Level Devil/index.html'},
+		{id:3,title:'Jogo 3',img:'https://picsum.photos/seed/dd/400/600',desc:'Beat em up retrô.'},
+		{id:4,title:'Jogo 4',img:'https://picsum.photos/seed/dbz/400/600',desc:'Lutas épicas.'},
+		{id:5,title:'Jogo 5',img:'https://picsum.photos/seed/duke/400/600',desc:'Ação e humor.'},
+		{id:6,title:'Jogo 6',img:'https://picsum.photos/seed/dirt/400/600',desc:'Corridas off-road.'},
+		{id:7,title:'Jogo 7',img:'https://picsum.photos/seed/dish/400/600',desc:'Stealth e ação.'},
+		{id:8,title:'Jogo 8',img:'https://picsum.photos/seed/dust/400/600',desc:'Aventura indie.'}
 	];
 
 	let filtered = games.slice();
