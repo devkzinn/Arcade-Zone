@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Launcher de Jogos</title>
+	<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+	<header class="topbar">
+		<div class="brand">
+			<h1>Arcade Zone</h1>
+			<p class="subtitle">Divirta-se jogando</p>
+		</div>
+		<div class="controls">
+			<input id="search" type="search" placeholder="Buscar jogos..." aria-label="Buscar jogos">
+			<button id="shuffle" title="Embaralhar">🔀</button>
+		</div>
+	</header>
+
+	<main>
+		<section class="grid-wrap">
+			<div id="grid" class="grid" role="list"></div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div id="preview" class="preview">Selecione um jogo para ver detalhes</div>
+		<div class="footer-actions">
+			<button id="play" class="primary" disabled>Jogar</button>
+			<button id="details" disabled>Detalhes</button>
+		</div>
+	</footer>
+
+	<template id="gameCard">
+		<article class="card" role="listitem" tabindex="0">
+			<img class="thumb" alt="Capa do jogo">
+			<div class="meta">
+				<h3 class="title"></h3>
+			</div>
+		</article>
+	</template>
+
+	<!-- Player overlay (in-page) -->
+	<div id="playerOverlay" class="player-overlay" hidden>
+		<div class="player-shell">
+			<div class="player-bar">
+				<div class="player-title">Player</div>
+				<div class="player-actions">
+					<button id="playerFullscreen" title="Tela cheia">⤢</button>
+					<button id="playerClose" title="Fechar">✕</button>
+				</div>
+			</div>
+			<iframe id="playerFrame" class="player-frame" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+		</div>
+	</div>
+
+	<script src="Script.js"></script>
+</body>
+</html>
