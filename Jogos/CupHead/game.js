@@ -981,7 +981,7 @@ function drawInstructions() {
     // INSTRUÇÕES DE MOVIMENTO
     ctx.fillStyle = '#FFD700'; // Amarelo
     ctx.font = '30px Arial';
-    ctx.fillText('MOVEMENTAÇÃO:', GAME_WIDTH / 2, boxY + 150);
+    ctx.fillText('MOVIMENTAÇÃO:', GAME_WIDTH / 2, boxY + 150);
     
     ctx.fillStyle = 'white';
     ctx.font = '24px Arial';
