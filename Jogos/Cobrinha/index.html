@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cobrinha</title>
+    <link rel="icon" type="image/x-icon" href="cobrinha.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <audio id="bg-music" src="assets/music.mp3" loop></audio>
+    <div class="wrapper">
+        <div class="menu-overlay">
+        <button class="music-toggle-btn" aria-label="Toggle music">
+        <i id="music-icon" class="fa-solid fa-music"></i>
+        </button>
+        <div class="menu-title">COBRINHA</div>
+        <button class="menu-play-btn">Jogar</button>
+        <button class="menu-how-btn">Como Jogar</button>
+      </div>
+      <div class="tutorial-overlay hidden">
+        <div class="tutorial-title">Como jogar</div>
+        <ul class="tutorial-list">
+          <li>Use as <b>Teclas de seta</b> (← ↑ → ↓) do seu teclado para controlar a cobra.</li>
+          <li>No celular, toque nos botões de seta abaixo do quadro.</li>
+          <li>Coma a comida colorida para crescer e ganhar pontos.</li>
+          <li>Evite bater nas paredes ou no seu próprio corpo!!</li>
+        </ul>
+        <button class="tutorial-back-btn">Voltar</button>
+      </div>
+      <div class="game-details">
+        <span class="score">Pontos: 0</span>
+        <span class="high-score">Maior Pontuação: 0</span>
+      </div>
+      <div class="play-board"></div>
+      <div class="floating-points-container"></div>
+      <div class="controls">
+        <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+        <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+        <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+        <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+      </div>
+      <div class="game-over-overlay hidden">
+        <div class="game-over-message">Fim de Jogo</div>
+        <div class="game-over-score">Pontos: 0</div>
+        <div class="game-over-time">Tempo: 0:00</div>
+        <button class="replay-btn">Recomeçar</button>
+        <button class="menu-btn">Menu</button>   
+    </div>
+    </div>
+  </body>
+</html>
