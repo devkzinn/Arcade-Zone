@@ -1,0 +1,11 @@
+body{
+    font-family: 'courier new', courier, monospace;
+    text-align: center;
+    background-color: blue;
+}
+#board{
+    /* background-image used by game drawing; ensure canvas fills the container */
+    background-image: url(flappybirdbg.png);
+    max-width: 100%;
+    height: auto;
+}
