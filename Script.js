@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		// preencha o caminho do executável conforme seu sistema. Exemplo abaixo assume D:/Privado/HTML/Launcher/Jogos/Level Devil/LevelDevil.exe
 		{id:1,title:'Cup Head',img:'Jogos/CupHead/cuphead.jpg',desc:'ação e plataforma.', exePath: 'Jogos/CupHead/index.html'},
 		{id:2,title:'Levil Devil',img:'Jogos/Level Devil/imagens/Capa Levil Devil Kz.png',desc:'plataforma 2D', exePath: 'Jogos/Level Devil/index.html'},
-		{id:3,title:'Jogo da Cobrinha',img:'Jogos/Cobrinha/cobrinha.png',desc:'Reflexos rápidos e planejamento', exePath: 'Jogos/Cobrinha/index.html'},
+		{id:3,title:'Cobrinha',img:'Jogos/Cobrinha/cobrinha.png',desc:'Reflexos rápidos e planejamento', exePath: 'Jogos/Cobrinha/index.html'},
 		{id:4,title:'Tetris',img:'Jogos/tetris/tetris.avif',desc:'Estratégia e rapidez.', exePath: 'Jogos/tetris/index.html'},
 		{id:5,title:'Brick Breake',img:'Jogos/brick-breake/brick.jpg',desc:'Estratégia. retrô.', exePath: 'Jogos/brick-breake/index.html'},
 		{id:6,title:'Flappy Bird',img:'Jogos/Flip-Bird/imagemFlappyBird.webp',desc:'Jogo Retrô', exePath: 'Jogos/Flip-Bird/index.html'},
@@ -157,8 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				// carregar no iframe do player
 				const overlay = document.getElementById('playerOverlay');
 				const frame = document.getElementById('playerFrame');
-				frame.src = url;
+				frame.setAttribute('src', url);
+				frame.setAttribute('scrolling', 'no');
+				frame.style.overflow = 'hidden';
 				overlay.hidden = false;
+				// try to focus the frame's window after it loads (best-effort)
+				frame.onload = function(){
+					try{ frame.contentWindow && frame.contentWindow.focus && frame.contentWindow.focus(); }catch(e){}
+				};
 				return;
 			} else {
 				// tenta abrir arquivo/executável via file:// (pode ser bloqueado)
