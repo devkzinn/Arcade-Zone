@@ -135,7 +135,7 @@ body{
 .player-bar{height:44px;display:flex;align-items:center;justify-content:space-between;padding:6px 12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
 .player-title{color:var(--white);font-weight:600}
 .player-actions button{background:transparent;border:0;color:var(--white);font-size:16px;padding:6px;cursor:pointer}
-.player-frame{flex:1;border:0;width:100%;height:100%;background:var(--black)}
+.player-frame{flex:1;border:0;width:100%;height:100%;background:var(--black);overflow:hidden}
 
 @media (max-width:720px){
 	.player-shell{width:98%;height:92%}
