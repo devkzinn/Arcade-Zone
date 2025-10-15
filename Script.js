@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		{id:1,title:'Cup Head',img:'Jogos/CupHead/cuphead.jpg',desc:'ação e plataforma.', exePath: 'Jogos/CupHead/index.html'},
 		{id:2,title:'Levil Devil',img:'Jogos/Level Devil/imagens/Capa Levil Devil Kz.png',desc:'plataforma 2D', exePath: 'Jogos/Level Devil/index.html'},
 		{id:3,title:'Cobrinha',img:'Jogos/Cobrinha/cobrinha.png',desc:'Reflexos rápidos e planejamento', exePath: 'Jogos/Cobrinha/index.html'},
-		{id:4,title:'Tetris',img:'Jogos/tetris/tetris.avif',desc:'Estratégia e rapidez.', exePath: 'Jogos/tetris/index.html'},
-		{id:5,title:'Brick Breake',img:'Jogos/brick-breake/brick.jpg',desc:'Estratégia. retrô.', exePath: 'Jogos/brick-breake/index.html'},
+		{id:4,title:'Tetris',img:'Jogos/tetris/tetris.avif',desc:'Estratégia e rapidez', exePath: 'Jogos/tetris/index.html'},
+		{id:5,title:'Brick Breake',img:'Jogos/brick-breake/brick.jpg',desc:'Estratégia retrô', exePath: 'Jogos/brick-breake/index.html'},
 		{id:6,title:'Flappy Bird',img:'Jogos/Flip-Bird/imagemFlappyBird.webp',desc:'Jogo Retrô', exePath: 'Jogos/Flip-Bird/index.html'},
-		//{id:7,title:'Jogo 7',img:'https://picsum.photos/seed/dish/400/600',desc:'Stealth e ação.'},
-		//{id:8,title:'Jogo 8',img:'https://picsum.photos/seed/dust/400/600',desc:'Aventura indie.'}
+		{id:7,title:'Mario Jump',img:'Jogos/MarioJump/IMG/mariojump.jpeg',desc:'plataforma e aventura', exePath: 'Jogos/MarioJump/index.html'},
+		{id:8,title:'BlackJack',img:'Jogos/BlackJack/BlackJack.jpg',desc:'Jogo de cartas', exePath: 'Jogos/BlackJack/Blackjackindex.html'},
+		
 	];
 
 	let filtered = games.slice();
