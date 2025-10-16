@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Arcade Zone</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="3110 epa.png">
+	<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+	<!-- Sidebar menu -->
+	<nav id="sidebar" class="sidebar" aria-label="Menu lateral" hidden>
+		<button id="closeSidebar" class="sidebar-close" title="Fechar menu">✕</button>
+		<div style="height:32px;"></div>
+		<ul class="sidebar-list">
+			<li><a href="Sobre.html" id="aboutLink">Sobre</a></li>
+			<li><a href="creditos.html" id="creditsLink">Créditos</a></li>
+		</ul>
+	</nav>
+	<header class="topbar">
+		<div class="topbar-left">
+			<button id="openSidebar" class="sidebar-toggle" title="Menu">☰</button>
+			<div class="brand">
+				<h1>Arcade Zone</h1>
+				<p class="subtitle">Divirta-se jogando</p>
+			</div>
+		</div>
+		<div class="controls">
+			<input id="search" type="search" placeholder="Buscar jogos..." aria-label="Buscar jogos">
+		</div>
+	</header>
+
+	<main>
+		<section class="grid-wrap">
+			<div id="grid" class="grid" role="list"></div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div id="preview" class="preview">Selecione um jogo para ver detalhes</div>
+		<div class="footer-actions">
+			<button id="play" class="primary" disabled>Jogar</button>
+			<button id="details" disabled>Detalhes</button>
+		</div>
+	</footer>
+
+	<template id="gameCard">
+		<article class="card" role="listitem" tabindex="0">
+			<img class="thumb" alt="Capa do jogo">
+			<div class="meta">
+				<h3 class="title"></h3>
+			</div>
+		</article>
+	</template>
+
+	<!-- Player overlay (in-page) -->
+	<div id="playerOverlay" class="player-overlay" hidden>
+		<div class="player-shell">
+			<div class="player-bar">
+				<div class="player-title">Player</div>
+				<div class="player-actions">
+					<button id="playerFullscreen" title="Tela cheia">⤢</button>
+					<button id="playerClose" title="Fechar">✕</button>
+				</div>
+			</div>
+			<iframe id="playerFrame" class="player-frame" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+		</div>
+	</div>
+
+	<script src="Script.js"></script>
+	<script>
+		// Sidebar logic
+		const sidebar = document.getElementById('sidebar');
+		const openSidebarBtn = document.getElementById('openSidebar');
+		const closeSidebarBtn = document.getElementById('closeSidebar');
+
+		openSidebarBtn.addEventListener('click', () => {
+			sidebar.hidden = false;
+		});
+		closeSidebarBtn.addEventListener('click', () => {
+			sidebar.hidden = true;
+		});
+	</script>
+</body>
+</html>
