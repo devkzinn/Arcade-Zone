@@ -2,6 +2,9 @@ const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const scoreDisplay = document.querySelector('.score');
 const restartBtn = document.querySelector('.restart-btn');
+// Congela pipe e mario até o jogo começar
+pipe.style.animation = 'none';
+mario.style.animation = 'none';
 
 
 // Adiciona funcionalidade ao botão de reiniciar
@@ -45,6 +48,9 @@ startButton && startButton.addEventListener('click', startGameWithCountdown);
 
 function startGame() {
   gameStarted = true;
+  // Inicia animações
+  pipe.style.animation = '';
+  mario.style.animation = '';
   // start main loop
   loopId = setInterval(gameLoop, 10);
   scoreId = setInterval(updateScore, 100);
