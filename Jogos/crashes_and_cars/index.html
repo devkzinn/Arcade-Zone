@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Crashes and Cars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-wrap">
+    <canvas id="game" tabindex="0"></canvas>
+
+    <div id="ui">
+      <div id="top-left">
+        <div class="label">Timer:</div>
+        <div id="timer">05:00</div>
+      </div>
+      <div id="top-right">
+        <div class="label">Pontuação:</div>
+        <div id="score">0.00</div>
+      </div>
+    </div>
+
+    <div id="menu" class="menu-visible">
+      <h1>CRASHES AND CARS</h1>
+      <div class="controls-instr">
+        <div class="instr-title">Botões</div>
+        <div class="keys">
+          <div class="key"><span>A</span></div>
+          <div class="key"><span>D</span></div>
+        </div>
+        <div class="ou">ou</div>
+        <div class="keys">
+          <div class="key"><span>&larr;</span></div>
+          <div class="key"><span>&rarr;</span></div>
+        </div>
+      </div>
+
+      <button id="start-btn" class="big">COMEÇAR</button>
+      <div class="small-note">Space para começar também</div>
+    </div>
+
+    <div id="game-over" class="hidden">
+      <div class="go-inner">
+        <h2>Game Over</h2>
+        <p>Pontuação: <span id="final-score">0.00</span></p>
+        <button id="restart">Jogar Novamente</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
