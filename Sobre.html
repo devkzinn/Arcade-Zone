@@ -17,10 +17,10 @@
 		}
 		.sobre-container {
 			background: #23244d;
-			border-radius: 26px;
-			box-shadow: 0 8px 40px 0 #0007, 0 0 0 2px #2d2e8333;
-			padding: 60px 54px 48px 54px;
-			max-width: 520px;
+			border-radius: 18px;
+			box-shadow: 0 6px 28px 0 #0007, 0 0 0 1.5px #2d2e8333;
+			padding: 28px 16px 18px 16px;
+			max-width: 340px;
 			width: 98vw;
 			text-align: center;
 			color: #fff;
@@ -28,55 +28,111 @@
 			position: relative;
 		}
 		.sobre-container img {
-			width: 130px;
-			margin: 28px auto 22px auto;
-			filter: drop-shadow(0 4px 18px #7b2ff2cc);
+			width: 64px;
+			margin: 10px auto 8px auto;
+			filter: drop-shadow(0 2px 10px #7b2ff2cc);
 			display: block;
-			border-radius: 18px;
+			border-radius: 10px;
 			background: #191a2a;
-			box-shadow: 0 2px 12px #23244d88;
+			box-shadow: 0 1px 6px #23244d88;
 		}
 		.sobre-container h1 {
 			margin-top: 0;
-			font-size: 2.8rem;
+			font-size: 1.25rem;
 			color: #fff;
-			letter-spacing: 1.5px;
-			text-shadow: 0 2px 12px #23244d88;
+			letter-spacing: 1px;
+			text-shadow: 0 1px 6px #23244d44;
 			font-weight: 800;
 		}
 		.sobre-container .sobre-label {
 			color: #ffe082;
-			font-size: 1.25em;
+			font-size: 1em;
 			font-weight: bold;
 			margin-bottom: 2px;
-			letter-spacing: 0.3px;
+			letter-spacing: 0.2px;
 			text-align: center;
 			width: 100%;
 			display: block;
-			margin-top: 8px;
+			margin-top: 2px;
 		}
 		.sobre-container p {
-			font-size: 1.28rem;
+			font-size: 0.98rem;
 			color: #f6f6fa;
-			margin-top: 22px;
+			margin-top: 10px;
 			margin-bottom: 0;
-			line-height: 1.8;
+			line-height: 1.5;
+			letter-spacing: 0.03px;
+		}
+		.sobre-container ul {
+			list-style: disc inside;
+			text-align: left;
+			margin: 8px auto 0 auto;
+			max-width: 260px;
+			color: #ffe082b0;
+			font-size: 0.97em;
+			padding-left: 0;
+		}
+		.sobre-container .sobre-section {
+			margin: 12px 0 0 0;
+		}
+		.sobre-container .sobre-section-title {
+			font-size: 0.98em;
+			color: #ffe082;
+			font-weight: bold;
+			margin-bottom: 2px;
 			letter-spacing: 0.1px;
+			display: block;
+		}
+		.sobre-container .sobre-links {
+			display: flex;
+			gap: 10px;
+			justify-content: center;
+			align-items: center;
+			margin-top: 4px;
+		}
+		.sobre-container .sobre-link {
+			color: #7b2ff2;
+			font-weight: bold;
+			display: inline-flex;
+			align-items: center;
+			gap: 4px;
+			font-size: 0.97em;
+			text-decoration: none;
+			border-radius: 6px;
+			padding: 2px 6px;
+			transition: color 0.2s;
+		}
+		.sobre-container .sobre-link.insta {
+			color: #f357a8;
+		}
+		.sobre-container .sobre-link:hover {
+			color: #ffe082;
+		}
+		.sobre-container .sobre-link img {
+			width: 16px;
+			height: 16px;
+			vertical-align: middle;
+			filter: drop-shadow(0 1px 4px #23244d44) brightness(0.97);
+			opacity: 0.88;
+			transition: filter 0.2s, opacity 0.2s;
 		}
 		@media (max-width: 600px) {
 			.sobre-container {
-				padding: 18px 4vw 18px 4vw;
-				max-width: 98vw;
+				padding: 6px 2vw 6px 2vw;
+				max-width: 99vw;
 			}
 			.sobre-container h1 {
-				font-size: 1.5rem;
+				font-size: 1rem;
 			}
 			.sobre-container p {
-				font-size: 1.05rem;
+				font-size: 0.91rem;
 			}
 			.sobre-container img {
-				width: 80px;
-				margin: 14px auto 12px auto;
+				width: 38px;
+				margin: 4px auto 4px auto;
+			}
+			.sobre-container ul {
+				font-size: 0.91em;
 			}
 		}
 	</style>
@@ -86,7 +142,30 @@
 		<h1>Sobre</h1>
 		<span class="sobre-label">Arcade Zone</span>
 		<img src="3110 epa.png" alt="Logo Arcade Zone">
-		<p>Arcade Zone é um launcher de jogos criado pelos alunos da turma 3110, para o EPA 2025 da Escola Técnica Estadual Santa Cruz.</p>
+		<p>
+			O <b>Arcade Zone</b> é um launcher de jogos criado pela turma <b>3110</b> para o <b>EPA 2025</b> da Escola Técnica Estadual Santa Cruz.<br>
+			O objetivo é proporcionar uma experiência nostálgica e divertida, reunindo jogos clássicos e autorais em uma plataforma moderna e acessível.
+		</p>
+		<div class="sobre-section">
+			<span class="sobre-section-title">Destaques</span>
+			<ul>
+				<li>Projeto colaborativo da turma 3110</li>
+				<li>Jogos clássicos e autorais</li>
+				<li>Design responsivo e moderno</li>
+				<li>Desenvolvido para o EPA 2025</li>
+			</ul>
+		</div>
+		<div class="sobre-section">
+			<span class="sobre-section-title">Agradecimentos</span>
+			<p class="sobre-agradecimento">Agradecimento especial à turma 3110, professores e colaboradores que tornaram este projeto possível!</p>
+		</div>
+		<div class="sobre-section">
+			<span class="sobre-section-title">Saiba mais</span>
+			<div class="sobre-links">
+				
+				<a href="https://www.instagram.com/3110_2025/" target="_blank" class="sobre-link insta"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg">Instagram</a>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
