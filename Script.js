@@ -15,8 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		{id:4,title:'Tetris',img:'Jogos/tetris/tetris.avif',desc:'Estratégia e rapidez', exePath: 'Jogos/tetris/index.html'},
 		{id:5,title:'Brick Breake',img:'Jogos/brick-breake/brick.jpg',desc:'Estratégia retrô', exePath: 'Jogos/brick-breake/index.html'},
 		{id:6,title:'Flappy Bird',img:'Jogos/Flip-Bird/imagemFlappyBird.webp',desc:'Jogo Retrô', exePath: 'Jogos/Flip-Bird/index.html'},
-		{id:7,title:'Mario Jump',img:'Jogos/MarioJump/IMG/mariojump.jpeg',desc:'plataforma e aventura', exePath: 'Jogos/MarioJump/index.html'},
-		{id:8,title:'BlackJack',img:'Jogos/BlackJack/BlackJack.jpg',desc:'Jogo de cartas', exePath: 'Jogos/BlackJack/Blackjackindex.html'},
+		{id:7,title:'Crashes And Cars',img:'Jogos/crashes_and_cars/capa.jpg',desc:'Carros', exePath: 'Jogos/crashes_and_cars/index.html'},
+		{id:8,title:'Mario Jump',img:'Jogos/MarioJump/IMG/mariojump.jpeg',desc:'plataforma e aventura', exePath: 'Jogos/MarioJump/index.html'},
+		{id:9,title:'BlackJack',img:'Jogos/BlackJack/BlackJack.jpg',desc:'Jogo de cartas', exePath: 'Jogos/BlackJack/Blackjackindex.html'},
 		
 	];
 
@@ -265,5 +266,4 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
-
 
