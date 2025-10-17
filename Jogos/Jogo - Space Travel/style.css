@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Opcional: Para aplicar a fonte pixelada também nas telas de UI */
+body {
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding-top: 20px;
+}
+
+/* O container do jogo para posicionar a tela de Game Over */
+#gameCanvas {
+    background-color: #050525;
+    border: 2px solid #fff;
+    cursor: crosshair;
+    position: relative; /* Necessário para o posicionamento do overlay */
+    z-index: 1;
+}
+
+#gameInfo {
+    margin-top: 10px;
+    font-size: 1.2em;
+    display: flex;
+    gap: 50px;
+    z-index: 2;
+}
+
+/* Estilo da tela de Game Over */
+#gameOverScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 3px solid red;
+    padding: 30px 60px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 10; /* Garante que fique por cima de tudo */
+}
+
+#restartButton {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}

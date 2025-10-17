@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SPACE TRAVEL</title> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; 
+            box-sizing: border-box; 
+        }
+
+        body {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Press Start 2P', monospace; 
+            color: white;
+        }
+
+        #gameCanvas {
+            width: 400px;  
+            height: 700px;
+            
+            border: 2px solid white; 
+            display: block;          
+            background-color: black; 
+            cursor: pointer;         
+            
+            flex-shrink: 0; 
+            flex-grow: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="gameCanvas" width="400" height="700"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
