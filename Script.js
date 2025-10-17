@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		{id:5,title:'Brick Breake',img:'Jogos/brick-breake/brick.jpg',desc:'Estratégia retrô', exePath: 'Jogos/brick-breake/index.html'},
 		{id:6,title:'Flappy Bird',img:'Jogos/Flip-Bird/imagemFlappyBird.webp',desc:'Jogo Retrô', exePath: 'Jogos/Flip-Bird/index.html'},
 		{id:7,title:'Crashes And Cars',img:'Jogos/crashes_and_cars/capa.jpg',desc:'Carros', exePath: 'Jogos/crashes_and_cars/index.html'},
-		{id:8,title:'Mario Jump',img:'Jogos/MarioJump/IMG/mariojump.jpeg',desc:'plataforma e aventura', exePath: 'Jogos/MarioJump/index.html'},
-		{id:9,title:'BlackJack',img:'Jogos/BlackJack/BlackJack.jpg',desc:'Jogo de cartas', exePath: 'Jogos/BlackJack/Blackjackindex.html'},
+		{id:8,title:'Space Travel',img:'Jogos/Jogo - Space Travel/IMG.jpg',desc:'Asteroides', exePath: 'Jogos/Jogo - Space Travel/index.html'},
+		{id:9,title:'Mario Jump',img:'Jogos/MarioJump/IMG/mariojump.jpeg',desc:'plataforma e aventura', exePath: 'Jogos/MarioJump/index.html'},
+		{id:10,title:'BlackJack',img:'Jogos/BlackJack/BlackJack.jpg',desc:'Jogo de cartas', exePath: 'Jogos/BlackJack/Blackjackindex.html'},
+		{id:11,title:'Pac Man',img:'Jogos/PAC_MAN/pzman.jpg',desc:'Retrô', exePath: 'Jogos/PAC_MAN/Pac_man_remaster.exe'},
 		
 	];
 
@@ -131,12 +133,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if(isElectron){
 			try{
-				const child_process = require && typeof require === 'function' ? require('child_process') : null;
-				if(child_process){
-					// spawn detached so the launcher can exit independently
-					const child = child_process.spawn(g.exePath, [], {detached:true, stdio:'ignore'});
-					child.unref && child.unref();
-					alert(`${g.title} iniciado pelo Electron.`);
+				// Prefer IPC exposed by preload.js to spawn executáveis de forma segura
+				if(window && window.electronAPI && typeof window.electronAPI.spawnExe === 'function'){
+					window.electronAPI.spawnExe(g.exePath).then(res=>{
+						if(res && res.success){
+							alert(`${g.title} iniciado pelo Electron.`);
+						} else {
+							alert(`Falha ao iniciar ${g.title}: ${res && res.message ? res.message : 'erro desconhecido'}`);
+						}
+					}).catch(err=>{
+						console.error('spawnExe error', err);
+						alert('Erro ao tentar iniciar o executável via Electron: '+String(err));
+					});
 					return;
 				}
 			}catch(err){
@@ -146,8 +154,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// tentativa para arquivos HTML locais: abrir no player embutido (iframe)
 		try{
-			const isHtml = typeof g.exePath === 'string' && /\.html?$/.test(g.exePath.toLowerCase());
 			const rawPath = String(g.exePath);
+			const isHtml = typeof g.exePath === 'string' && /\.html?$/.test(g.exePath.toLowerCase());
+			const isExe = typeof g.exePath === 'string' && /\.exe$/i.test(g.exePath);
+
+			// If it's an .exe and we're not in Electron, browsers will not allow executing it.
+			if(isExe && !isElectron){
+				// copy path to clipboard and instruct the user
+				if(navigator.clipboard && navigator.clipboard.writeText){
+					navigator.clipboard.writeText(rawPath).then(()=>{
+						alert(`Este jogo é um executável local (.exe) e navegadores normalmente não permitem executá-lo por segurança.\n\nCaminho copiado para a área de transferência:\n${rawPath}\n\nCole no Explorador de Arquivos e execute o .exe, ou use o Launcher via Electron para iniciar automaticamente.`);
+					}).catch(()=>{
+						prompt('Copie manualmente o caminho do executável abaixo:', rawPath);
+					});
+				} else {
+					prompt('Copie manualmente o caminho do executável abaixo:', rawPath);
+				}
+				return;
+			}
 			if(isHtml){
 				// se for um arquivo relativo local, transforma em URL relativa ao HTML
 				let url = rawPath.replace(/\\\\/g, '/');
